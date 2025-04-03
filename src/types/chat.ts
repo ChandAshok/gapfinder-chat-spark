@@ -4,6 +4,11 @@ export interface Message {
   content: string;
   timestamp: string;
   status?: 'sent' | 'delivered' | 'read' | 'loading';
+  attachment?: {
+    name: string;
+    type: string;
+    url: string;
+  };
 }
 
 export interface ChatState {

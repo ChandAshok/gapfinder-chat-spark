@@ -14,7 +14,7 @@ const ChatHeader = () => {
           </Button>
         </Link>
         <div className="text-xl font-bold text-gapfinder-600">
-          Gap<span className="text-gapfinder-500">Finder</span>
+          Gap<span className="text-gapfinder-500">Reviewer</span> AI
           <span className="ml-2 text-sm font-normal text-gray-500">Chat Assistant</span>
         </div>
       </div>

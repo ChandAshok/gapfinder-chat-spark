@@ -12,19 +12,34 @@ const ChatPage = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
 
-  const handleSendMessage = useCallback(async (content: string) => {
+  const handleSendMessage = useCallback(async (content: string, attachment?: File) => {
+    // Create a unique URL for the file if it exists
+    let attachmentData = undefined;
+    
+    if (attachment) {
+      attachmentData = {
+        name: attachment.name,
+        type: attachment.type,
+        url: URL.createObjectURL(attachment)
+      };
+    }
+    
     // Add user message to the chat
     const userMessage: Message = {
       role: 'user',
       content,
       timestamp: formatTimestamp(),
       status: 'sent',
+      attachment: attachmentData
     };
     
     setMessages(prev => [...prev, userMessage]);
     setIsTyping(true);
     
     try {
+      // In a real app, you would upload the file to a server here
+      // And include the file reference in your API call
+      
       // Send to API and get response
       const response = await fetchAgentResponse([...messages, userMessage]);
       
