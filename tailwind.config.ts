@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				gapfinder: {
+					50: '#f0f3ff',
+					100: '#e4eaff',
+					200: '#ccd8ff',
+					300: '#a5b8ff',
+					400: '#798dff',
+					500: '#6E4AE7', // Main purple
+					600: '#2A3990', // Deep blue
+					700: '#2e3880',
+					800: '#272c65',
+					900: '#252a56',
 				}
 			},
 			borderRadius: {
@@ -84,11 +97,23 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				typing: {
+					'0%': { width: '0%' },
+					'50%': { width: '40%' },
+					'100%': { width: '0%' }
+				},
+				'dot-flashing': {
+					'0%': { opacity: '0.2' },
+					'20%': { opacity: '1' },
+					'100%': { opacity: '0.2' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				typing: 'typing 2s ease-in-out infinite alternate',
+				'dot-flashing': 'dot-flashing 1s infinite linear alternate'
 			}
 		}
 	},
